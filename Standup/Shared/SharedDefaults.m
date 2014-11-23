@@ -14,6 +14,11 @@ SharedDefaults * theDefaults;
 	NSUserDefaults * _defaults;
 }
 
+static NSString * hasStoodUpKey = @"hasStoodUp";
+static NSString * notificationKey = @"standUpNotification";
+static NSString * stepsKey = @"steps";
+static NSString * lastStandUpKey = @"lastStandUp";
+
 +(SharedDefaults *)center {
 	static dispatch_once_t token;
 
@@ -24,30 +29,40 @@ SharedDefaults * theDefaults;
 }
 
 - (void)setStoodUp:(BOOL)stoodUp {
-	_stoodUp = stoodUp;
-	[_defaults setBool:stoodUp forKey:@"hasStoodUp"];
+	[_defaults setBool:stoodUp forKey:hasStoodUpKey];
 	[_defaults synchronize];
+}
+
+- (BOOL)stoodUp {
+	return [_defaults boolForKey:hasStoodUpKey];
 }
 
 - (void)setStandUpNotification:(NSString *)standUpNotification {
-	_standUpNotification = standUpNotification;
-	[_defaults setValue:standUpNotification forKey:@"standUpNotification"];
+	[_defaults setValue:standUpNotification forKey:notificationKey];
 	[_defaults synchronize];
 }
 
+- (NSString *)standUpNotification {
+	return [_defaults valueForKey:notificationKey];
+}
+
 - (void)setSteps:(NSInteger)steps {
-    _steps = steps;
-    [_defaults setInteger:steps forKey:@"steps"];
+    [_defaults setInteger:steps forKey:stepsKey];
     [_defaults synchronize];
+}
+
+- (NSInteger)steps {
+	return [[_defaults valueForKey:stepsKey] integerValue];
 }
 
 - (void)setLastStandUp:(NSDate *)lastStoodup {
-    _lastStandUp = lastStoodup;
-    [_defaults setValue:lastStoodup forKey:@"lastStandUp"];
+    [_defaults setValue:lastStoodup forKey:lastStandUpKey];
     [_defaults synchronize];
 }
 
-
+- (NSDate *)lastStandUp {
+	return [_defaults valueForKey:lastStandUpKey];
+}
 
 - (instancetype)init
 {
