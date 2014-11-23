@@ -19,6 +19,7 @@
 	[super viewDidLoad];
 
 	[SharedDefaults center].stoodUp = YES;
+	[SharedDefaults center].standUpNotification = @"Stood up!";
 }
 
 - (void)didReceiveMemoryWarning {
