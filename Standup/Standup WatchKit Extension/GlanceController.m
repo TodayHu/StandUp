@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *timerLabel;
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *detailText;
 
+@property (strong, nonatomic) NSDate* lastTimeStanding;
+
 @end
 
 
@@ -42,22 +44,28 @@
     //notification text
 	self.standUpText = [SharedDefaults center].standUpNotification;
 
+
+
     //if the person stood up...
 	self.hasStoodUp = [SharedDefaults center].stoodUp;
-//    NSDate* lastTimeStanding =
-    if (self.hasStoodUp)
+    if ((!self.lastTimeStanding) || self.hasStoodUp)
     {
-//        [self.sitTimer setDate:<#(NSDate *)#>];
-    }
-    else
-    {
-
+        self.lastTimeStanding = [NSDate date];
     }
 
+    NSDate* timerStartDate = self.lastTimeStanding;
+//    timerStartDate = [NSDate dateWithTimeInterval:-60 sinceDate:self.lastTimeStanding];
+
+    timerStartDate = self.lastTimeStanding;
+
+    NSLog(@"Setting timer date to %@", timerStartDate);
+    [self.sitTimer setDate:timerStartDate];
     [self.sitTimer start];
 
-    [self.detailText setText:self.standUpText];
-
+    if (self.standUpText)
+    {
+        [self.detailText setText:self.standUpText];
+    }
 }
 
 - (void)didDeactivate {
