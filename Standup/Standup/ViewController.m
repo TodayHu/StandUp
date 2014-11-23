@@ -32,6 +32,12 @@
 - (IBAction)stoodToggle:(id)sender {
 	[SharedDefaults center].stoodUp = _stoodSwitch.on;
 }
+- (IBAction)walk500Button:(id)sender {
+    NSInteger steps = [SharedDefaults center].steps;
+    steps += 500;
+    [SharedDefaults center].steps = steps;
+    [SharedDefaults center].lastStandUp = [NSDate date];
+}
 
 - (IBAction)notificationChanged:(id)sender {
 	[SharedDefaults center].standUpNotification = _notificationField.text;

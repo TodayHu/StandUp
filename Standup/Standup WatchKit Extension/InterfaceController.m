@@ -11,7 +11,7 @@
 
 
 @interface InterfaceController()
-
+@property (nonatomic) NSTimer *timer;
 @end
 
 
@@ -23,7 +23,6 @@
         // Initialize variables here.
         // Configure interface objects here.
         NSLog(@"%@ initWithContext", self);
-        
     }
     return self;
 }
@@ -32,15 +31,24 @@
     // This method is called when watch view controller is about to be visible to user
     NSLog(@"%@ will activate", self);
     // load from stored data
-    NSInteger steps = [SharedDefaults center].steps;
-    NSDate *date = [SharedDefaults center].lastStandUp;
-    
-    [self updateDisplayWithSteps:steps andLastTime:date];
+    if (!self.timer) {
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateData:) userInfo:nil repeats:YES];
+    }
+	[self hackAtNotificationPayload];
 }
 
 - (void)didDeactivate {
     // This method is called when watch view controller is no longer visible
     NSLog(@"%@ did deactivate", self);
+    [self.timer invalidate];
+    self.timer = nil;
+}
+
+- (void)updateData:(NSTimer *)timer {
+    NSInteger steps = [SharedDefaults center].steps;
+    NSDate *date = [SharedDefaults center].lastStandUp;
+    
+    [self updateDisplayWithSteps:steps andLastTime:date];
 }
 
 
@@ -56,6 +64,15 @@
     [self.lastTime setText:formattedDateString];
 
 }
+
+- (void)hackAtNotificationPayload {
+	NSBundle * bundle = [NSBundle mainBundle];
+//	NSURL * originalPayload = [bundle URLForResource:@"OriginalPushNotificationPayload" withExtension:@"json"];
+	NSURL * newPayload = [bundle URLForResource:@"PushNotificationPayload" withExtension:@"json"];
+
+	NSLog(@"newPayload is: %@", newPayload);
+}
+
 @end
 
 

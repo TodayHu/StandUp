@@ -1,6 +1,6 @@
 {
     "aps": {
-        "alert": "Standup Test",
+        "alert": "[ALERT TEXT]",
         "title": "Optional title",
         "category": "myCategory"
     },
