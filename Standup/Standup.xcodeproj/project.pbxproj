@@ -30,6 +30,8 @@
 		3B80167C1A226C15004F90C7 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8016641A226C14004F90C7 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3B80168B1A228400004F90C7 /* SharedDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8016891A228400004F90C7 /* SharedDefaults.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B80168C1A228400004F90C7 /* SharedDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B80168A1A228400004F90C7 /* SharedDefaults.m */; };
+		3B80168E1A2299F5004F90C7 /* OriginalPushNotificationPayload.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B80168D1A2299F5004F90C7 /* OriginalPushNotificationPayload.json */; };
+		3B80168F1A229E36004F90C7 /* PushNotificationPayload.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B80163C1A226C00004F90C7 /* PushNotificationPayload.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +143,7 @@
 		3B8016881A227DB6004F90C7 /* Standup WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Standup WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		3B8016891A228400004F90C7 /* SharedDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedDefaults.h; sourceTree = "<group>"; };
 		3B80168A1A228400004F90C7 /* SharedDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedDefaults.m; sourceTree = "<group>"; };
+		3B80168D1A2299F5004F90C7 /* OriginalPushNotificationPayload.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OriginalPushNotificationPayload.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +286,7 @@
 			children = (
 				3B80163B1A226C00004F90C7 /* Info.plist */,
 				3B80163C1A226C00004F90C7 /* PushNotificationPayload.json */,
+				3B80168D1A2299F5004F90C7 /* OriginalPushNotificationPayload.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -553,6 +557,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B80168E1A2299F5004F90C7 /* OriginalPushNotificationPayload.json in Resources */,
+				3B80168F1A229E36004F90C7 /* PushNotificationPayload.json in Resources */,
 				3B8016471A226C00004F90C7 /* Images.xcassets in Resources */,
 				3B80164B1A226C00004F90C7 /* Standup Watch App.app in Resources */,
 			);

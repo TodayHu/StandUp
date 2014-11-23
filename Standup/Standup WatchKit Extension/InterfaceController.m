@@ -34,6 +34,7 @@
     if (!self.timer) {
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateData:) userInfo:nil repeats:YES];
     }
+	[self hackAtNotificationPayload];
 }
 
 - (void)didDeactivate {
@@ -63,6 +64,15 @@
     [self.lastTime setText:formattedDateString];
 
 }
+
+- (void)hackAtNotificationPayload {
+	NSBundle * bundle = [NSBundle mainBundle];
+//	NSURL * originalPayload = [bundle URLForResource:@"OriginalPushNotificationPayload" withExtension:@"json"];
+	NSURL * newPayload = [bundle URLForResource:@"PushNotificationPayload" withExtension:@"json"];
+
+	NSLog(@"newPayload is: %@", newPayload);
+}
+
 @end
 
 
