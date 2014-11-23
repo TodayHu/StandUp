@@ -11,6 +11,9 @@
 
 @interface NotificationController()
 
+@property NSString * standUpText;
+@property BOOL  hasStoodUp;
+
 @end
 
 
@@ -45,6 +48,16 @@
     // After populating your dynamic notification interface call the completion block.
     completionHandler(WKUserNotificationInterfaceTypeCustom);
 	NSLog(@"Local Notification");
+    
+    //read local notifications
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.standup"];
+    
+    //notification text
+    self.standUpText = [sharedDefaults objectForKey:@"standUpNotification"];
+    
+    //if the person stood up...
+    self.hasStoodUp = [sharedDefaults boolForKey:@"hasStoodUp"];
+
 }
 
 /*

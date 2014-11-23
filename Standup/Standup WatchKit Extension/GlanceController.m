@@ -11,6 +11,9 @@
 
 @interface GlanceController()
 
+@property NSString * standUpText;
+@property BOOL  hasStoodUp;
+
 @end
 
 
@@ -30,6 +33,16 @@
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     NSLog(@"%@ will activate", self);
+    
+    //read local notifications
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.standup"];
+    
+    //notification text
+    self.standUpText = [sharedDefaults objectForKey:@"standUpNotification"];
+    
+    //if the person stood up...
+    self.hasStoodUp = [sharedDefaults boolForKey:@"hasStoodUp"];
+
 }
 
 - (void)didDeactivate {
