@@ -14,6 +14,11 @@
 @property NSString * standUpText;
 @property BOOL  hasStoodUp;
 
+@property (weak, nonatomic) IBOutlet WKInterfaceTimer *sitTimer;
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel *titleLabel;
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel *timerLabel;
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel *detailText;
+
 @end
 
 
@@ -38,7 +43,20 @@
 	self.standUpText = [SharedDefaults center].standUpNotification;
 
     //if the person stood up...
-    self.hasStoodUp = [SharedDefaults center].stoodUp;
+	self.hasStoodUp = [SharedDefaults center].stoodUp;
+//    NSDate* lastTimeStanding =
+    if (self.hasStoodUp)
+    {
+//        [self.sitTimer setDate:<#(NSDate *)#>];
+    }
+    else
+    {
+
+    }
+
+    [self.sitTimer start];
+
+    [self.detailText setText:self.standUpText];
 
 }
 
