@@ -11,15 +11,17 @@
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
                         <label width="135.5" height="26.5" alignment="left" text="Steps recorded:" numberOfLines="0" id="GPc-g4-pjQ">
-                            <color key="textColor" red="0.14184739635243404" green="1" blue="0.35541378292065673" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.95607406473639633" green="0.99572954789194723" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </label>
                         <label alignment="right" text="100" textAlignment="right" id="74j-JP-W7x">
-                            <color key="textColor" red="0.29531729732540257" green="0.91678141070082297" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.14184739639999999" green="1" blue="0.35541378289999997" alpha="1" colorSpace="calibratedRGB"/>
                         </label>
                         <label alignment="left" text="Last StandUp:" id="G83-bv-pyB">
-                            <color key="textColor" red="0.67198266641707582" green="0.18000863177157955" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.97785256255692687" green="0.992637765079463" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </label>
-                        <label alignment="center" text="Label" id="EL5-IT-vGb"/>
+                        <label width="136" alignment="center" text="Label" textAlignment="right" id="EL5-IT-vGb">
+                            <color key="textColor" red="1" green="0.073311755916592225" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
                     </items>
                     <connections>
                         <outlet property="lastTime" destination="EL5-IT-vGb" id="fYx-RP-J7u"/>
@@ -36,17 +38,21 @@
                     <items>
                         <group alignment="left" id="t8f-Gd-c4y">
                             <items>
-                                <label alignment="left" text="StandUp" id="UWp-cJ-MV7"/>
+                                <label width="103" height="50" alignment="left" text="Stand Up" textAlignment="right" id="UWp-cJ-MV7">
+                                    <color key="textColor" red="0.14184739639999999" green="1" blue="0.35541378289999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
                             </items>
                         </group>
                         <group alignment="left" layout="vertical" id="uCw-4Q-Ouw">
                             <items>
                                 <label width="1" alignment="left" text="Sitting for:" id="8MJ-Nm-u7Z"/>
                                 <timer width="1" alignment="left" textAlignment="center" id="dUd-FG-u1d">
-                                    <color key="textColor" red="0.80000000000000004" green="0.0" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="1" green="0.031469800112348789" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                 </timer>
-                                <label width="1" alignment="left" text="Get up and move!" id="PA5-HY-tNA"/>
+                                <label width="1" alignment="left" text="Get up and move!" textAlignment="center" id="PA5-HY-tNA">
+                                    <color key="textColor" red="1" green="0.0" blue="0.01049331014017163" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
                             </items>
                         </group>
                     </items>
