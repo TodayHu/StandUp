@@ -18,10 +18,10 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 
-	[SharedDefaults center].stoodUp = YES;
-	[SharedDefaults center].standUpNotification = @"Stood up!";
-    [SharedDefaults center].steps = 3000;
-    [SharedDefaults center].lastStandUp = [NSDate date];
+	[SharedDefaults center].stoodUp = NO;
+	_stoodSwitch.on = NO;
+	[SharedDefaults center].standUpNotification = @"Sitting";
+	_notificationField.text = [SharedDefaults center].standUpNotification;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,7 +29,18 @@
 	// Dispose of any resources that can be recreated.
 }
 
+- (IBAction)stoodToggle:(id)sender {
+	[SharedDefaults center].stoodUp = _stoodSwitch.on;
+}
 
+- (IBAction)notificationChanged:(id)sender {
+	[SharedDefaults center].standUpNotification = _notificationField.text;
+}
 
+#pragma mark UITextFieldDelegate methods
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+	[_notificationField resignFirstResponder];
+	return YES;
+}
 
 @end

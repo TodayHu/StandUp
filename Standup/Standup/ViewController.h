@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *notificationField;
+@property (weak, nonatomic) IBOutlet UISwitch *stoodSwitch;
 
+- (IBAction)stoodToggle:(id)sender;
+- (IBAction)notificationChanged:(id)sender;
 
 @end
 
