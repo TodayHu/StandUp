@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+@import Shared;
 
 @interface ViewController ()
 @end
@@ -16,9 +17,8 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-    
-    
-    [self saveToDefualts];
+
+	[SharedDefaults center].stoodUp = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,24 +26,6 @@
 	// Dispose of any resources that can be recreated.
 }
 
-//save the nsuserdefaults
-
--(void)saveToDefualts
-{
-    
-    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.standup"];
-    
-    NSString * standUp = @"Stand Up!";
-    
-    
-    [sharedDefaults setValue:standUp forKey:@"standUpNotification"];
-    [sharedDefaults setBool:NO forKey:@"hasStoodUp"];
-    
-    
-    
-    [sharedDefaults synchronize];
-    
-}
 
 
 

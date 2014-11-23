@@ -7,7 +7,7 @@
 //
 
 #import "GlanceController.h"
-
+@import Shared;
 
 @interface GlanceController()
 
@@ -34,14 +34,11 @@
     // This method is called when watch view controller is about to be visible to user
     NSLog(@"%@ will activate", self);
     
-    //read local notifications
-    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.standup"];
-    
     //notification text
-    self.standUpText = [sharedDefaults objectForKey:@"standUpNotification"];
-    
+	self.standUpText = [SharedDefaults center].standUpNotification;
+
     //if the person stood up...
-    self.hasStoodUp = [sharedDefaults boolForKey:@"hasStoodUp"];
+    self.hasStoodUp = [SharedDefaults center].stoodUp;
 
 }
 

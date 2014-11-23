@@ -28,6 +28,8 @@
 		3B8016781A226C15004F90C7 /* SharedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8016771A226C15004F90C7 /* SharedTests.m */; };
 		3B80167B1A226C15004F90C7 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8016641A226C14004F90C7 /* Shared.framework */; };
 		3B80167C1A226C15004F90C7 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8016641A226C14004F90C7 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3B80168B1A228400004F90C7 /* SharedDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8016891A228400004F90C7 /* SharedDefaults.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B80168C1A228400004F90C7 /* SharedDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B80168A1A228400004F90C7 /* SharedDefaults.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +139,8 @@
 		3B8016771A226C15004F90C7 /* SharedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SharedTests.m; sourceTree = "<group>"; };
 		3B8016871A227D81004F90C7 /* Standup.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Standup.entitlements; sourceTree = "<group>"; };
 		3B8016881A227DB6004F90C7 /* Standup WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Standup WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		3B8016891A228400004F90C7 /* SharedDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedDefaults.h; sourceTree = "<group>"; };
+		3B80168A1A228400004F90C7 /* SharedDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedDefaults.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +310,8 @@
 			children = (
 				3B8016681A226C14004F90C7 /* Shared.h */,
 				3B8016661A226C14004F90C7 /* Supporting Files */,
+				3B8016891A228400004F90C7 /* SharedDefaults.h */,
+				3B80168A1A228400004F90C7 /* SharedDefaults.m */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B8016691A226C14004F90C7 /* Shared.h in Headers */,
+				3B80168B1A228400004F90C7 /* SharedDefaults.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +616,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B80168C1A228400004F90C7 /* SharedDefaults.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
