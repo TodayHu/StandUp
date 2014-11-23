@@ -25,7 +25,7 @@
 - (IBAction)testSendNotification:(id)sender {
 	UILocalNotification * notification = [UILocalNotification new];
 	notification.category = @"invitation";
-	notification.
+//	notification.
 
 	[[UIApplication sharedApplication] presentLocalNotificationNow:notification];
 }
