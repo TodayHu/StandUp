@@ -7,6 +7,7 @@
 //
 
 #import "InterfaceController.h"
+@import Shared;
 
 
 @interface InterfaceController()
@@ -31,7 +32,10 @@
     // This method is called when watch view controller is about to be visible to user
     NSLog(@"%@ will activate", self);
     // load from stored data
-    [self updateDisplayWithSteps:300 andLastTime:[NSDate date]];
+    NSInteger steps = [SharedDefaults center].steps;
+    NSDate *date = [SharedDefaults center].lastStandUp;
+    
+    [self updateDisplayWithSteps:steps andLastTime:date];
 }
 
 - (void)didDeactivate {
@@ -45,8 +49,9 @@
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM-dd 'at' HH:mm"];
+
     
-    NSString *formattedDateString = [dateFormatter stringFromDate:date];
+    NSString *formattedDateString = date ? [dateFormatter stringFromDate:date] : @"No record found!";
     
     [self.lastTime setText:formattedDateString];
 
