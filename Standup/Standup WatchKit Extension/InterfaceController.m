@@ -30,6 +30,8 @@
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     NSLog(@"%@ will activate", self);
+    // load from stored data
+    [self updateDisplayWithSteps:300 andLastTime:[NSDate date]];
 }
 
 - (void)didDeactivate {
@@ -37,6 +39,18 @@
     NSLog(@"%@ did deactivate", self);
 }
 
+
+- (void)updateDisplayWithSteps:(NSInteger)steps andLastTime:(NSDate *)date {
+    [self.stepsCounter setText:[NSString stringWithFormat:@"%@", @(steps)]];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM-dd 'at' HH:mm"];
+    
+    NSString *formattedDateString = [dateFormatter stringFromDate:date];
+    
+    [self.lastTime setText:formattedDateString];
+
+}
 @end
 
 

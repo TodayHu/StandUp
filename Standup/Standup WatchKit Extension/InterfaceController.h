@@ -10,5 +10,7 @@
 #import <Foundation/Foundation.h>
 
 @interface InterfaceController : WKInterfaceController
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel *stepsCounter;
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel *lastTime;
 
 @end
