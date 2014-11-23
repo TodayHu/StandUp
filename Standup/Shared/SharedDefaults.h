@@ -14,5 +14,7 @@
 
 @property (nonatomic) BOOL stoodUp;
 @property (nonatomic) NSString * standUpNotification;
+@property (nonatomic) NSInteger steps;
+@property (nonatomic) NSDate * lastStandUp;
 
 @end

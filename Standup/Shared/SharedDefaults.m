@@ -35,6 +35,20 @@ SharedDefaults * theDefaults;
 	[_defaults synchronize];
 }
 
+- (void)setSteps:(NSInteger)steps {
+    _steps = steps;
+    [_defaults setInteger:steps forKey:@"steps"];
+    [_defaults synchronize];
+}
+
+- (void)setLastStandUp:(NSDate *)lastStoodup {
+    _lastStandUp = lastStoodup;
+    [_defaults setValue:lastStoodup forKey:@"lastStandUp"];
+    [_defaults synchronize];
+}
+
+
+
 - (instancetype)init
 {
 	self = [super init];

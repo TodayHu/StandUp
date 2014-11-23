@@ -20,6 +20,8 @@
 
 	[SharedDefaults center].stoodUp = YES;
 	[SharedDefaults center].standUpNotification = @"Stood up!";
+    [SharedDefaults center].steps = 3000;
+    [SharedDefaults center].lastStandUp = [NSDate date];
 }
 
 - (void)didReceiveMemoryWarning {
