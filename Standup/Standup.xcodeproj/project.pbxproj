@@ -135,6 +135,8 @@
 		3B80166E1A226C14004F90C7 /* SharedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B8016761A226C15004F90C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B8016771A226C15004F90C7 /* SharedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SharedTests.m; sourceTree = "<group>"; };
+		3B8016871A227D81004F90C7 /* Standup.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Standup.entitlements; sourceTree = "<group>"; };
+		3B8016881A227DB6004F90C7 /* Standup WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Standup WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 		3B80160A1A226BEB004F90C7 /* Standup */ = {
 			isa = PBXGroup;
 			children = (
+				3B8016871A227D81004F90C7 /* Standup.entitlements */,
 				3B80160F1A226BEB004F90C7 /* AppDelegate.h */,
 				3B8016101A226BEB004F90C7 /* AppDelegate.m */,
 				3B8016121A226BEB004F90C7 /* ViewController.h */,
@@ -258,6 +261,7 @@
 		3B8016391A226C00004F90C7 /* Standup WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				3B8016881A227DB6004F90C7 /* Standup WatchKit Extension.entitlements */,
 				3B80163D1A226C00004F90C7 /* InterfaceController.h */,
 				3B80163E1A226C00004F90C7 /* InterfaceController.m */,
 				3B8016401A226C00004F90C7 /* NotificationController.h */,
@@ -465,6 +469,12 @@
 				TargetAttributes = {
 					3B8016071A226BEB004F90C7 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 6LMYPJV5KV;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					3B8016201A226BEB004F90C7 = {
 						CreatedOnToolsVersion = 6.2;
@@ -472,6 +482,12 @@
 					};
 					3B8016341A226C00004F90C7 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 6LMYPJV5KV;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					3B8016491A226C00004F90C7 = {
 						CreatedOnToolsVersion = 6.2;
@@ -739,9 +755,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Standup/Standup.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Standup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -749,9 +769,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Standup/Standup.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Standup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -824,6 +848,9 @@
 		3B80165C1A226C00004F90C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Standup WatchKit Extension/Standup WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -831,6 +858,7 @@
 				INFOPLIST_FILE = "Standup WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -838,9 +866,13 @@
 		3B80165D1A226C00004F90C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Standup WatchKit Extension/Standup WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Standup WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -938,6 +970,7 @@
 				3B80162D1A226BEB004F90C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B80162E1A226BEB004F90C7 /* Build configuration list for PBXNativeTarget "StandupTests" */ = {
 			isa = XCConfigurationList;
@@ -946,6 +979,7 @@
 				3B8016301A226BEB004F90C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B8016581A226C00004F90C7 /* Build configuration list for PBXNativeTarget "Standup Watch App" */ = {
 			isa = XCConfigurationList;
@@ -954,6 +988,7 @@
 				3B80165A1A226C00004F90C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B80165B1A226C00004F90C7 /* Build configuration list for PBXNativeTarget "Standup WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -962,6 +997,7 @@
 				3B80165D1A226C00004F90C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B80167D1A226C15004F90C7 /* Build configuration list for PBXNativeTarget "Shared" */ = {
 			isa = XCConfigurationList;
@@ -970,6 +1006,7 @@
 				3B80167F1A226C15004F90C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B8016811A226C15004F90C7 /* Build configuration list for PBXNativeTarget "SharedTests" */ = {
 			isa = XCConfigurationList;
@@ -978,6 +1015,7 @@
 				3B8016831A226C15004F90C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

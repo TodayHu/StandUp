@@ -47,7 +47,7 @@
             <objects>
                 <notificationController id="YCC-NB-fut">
                     <items>
-                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                        <label alignment="left" text="Hello Hackathon." id="XkS-y5-khE"/>
                     </items>
                     <notificationCategory key="notificationCategory" id="JfB-70-Muf"/>
                     <connections>
