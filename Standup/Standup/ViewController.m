@@ -31,6 +31,9 @@
 
 - (IBAction)stoodToggle:(id)sender {
 	[SharedDefaults center].stoodUp = _stoodSwitch.on;
+	if (_stoodSwitch.on) {
+		[SharedDefaults center].lastStandUp = [NSDate date];
+	}
 }
 - (IBAction)walk500Button:(id)sender {
     NSInteger steps = [SharedDefaults center].steps;

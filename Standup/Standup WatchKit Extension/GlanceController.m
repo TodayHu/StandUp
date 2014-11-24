@@ -10,6 +10,7 @@
 @import Shared;
 
 @interface GlanceController()
+@property (nonatomic) NSTimer *timer;
 
 @property NSString * standUpText;
 @property BOOL  isStandingUp;
@@ -41,49 +42,61 @@
     // This method is called when watch view controller is about to be visible to user
     NSLog(@"%@ will activate", self);
     
-    //notification text
+	// load from stored data
+	if (!self.timer) {
+		self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateData:) userInfo:nil repeats:YES];
+	}
+	[self configureGlance];
+}
+
+- (void)configureGlance {
+	//notification text
 	self.standUpText = [SharedDefaults center].standUpNotification;
 
-    //if the person is standing up, hide the timer
+	//if the person is standing up, hide the timer
 	self.isStandingUp = [SharedDefaults center].stoodUp;
 
-    // Last time the person stood up and moved
-    self. lastTimeStanding = [SharedDefaults center].lastStandUp;
+	// Last time the person stood up and moved
+	self. lastTimeStanding = [SharedDefaults center].lastStandUp;
 
 
-    // TESTTING - remove this:
-    //self.isStandingUp = true;
-    ///////////////////////////////
+	// TESTTING - remove this:
+	//self.isStandingUp = true;
+	///////////////////////////////
 
-    [self.sitTimer setHidden:self.isStandingUp];
-    [self.timerLabel setText: !self.isStandingUp ?
-     @"Sitting for:" : @"You're Standing."];
+	[self.sitTimer setHidden:self.isStandingUp];
+	[self.timerLabel setText: !self.isStandingUp ?
+	 @"Sitting for:" : @"You're Standing."];
 
-    if ((!self.lastTimeStanding || self.isStandingUp))
-    {
-        self.lastTimeStanding = [NSDate date];
-    }
+	if ((!self.lastTimeStanding || self.isStandingUp))
+	{
+		self.lastTimeStanding = [NSDate date];
+	}
 
-    NSDate* timerStartDate = self.lastTimeStanding;
+	NSDate* timerStartDate = self.lastTimeStanding;
 
-    timerStartDate = self.lastTimeStanding;
+	timerStartDate = self.lastTimeStanding;
 
-    NSLog(@"Setting timer date to %@", timerStartDate);
-    [self.sitTimer setDate:timerStartDate];
-    [self.sitTimer start];
+	NSLog(@"Setting timer date to %@", timerStartDate);
+	[self.sitTimer setDate:timerStartDate];
+	[self.sitTimer start];
 
-    if (self.isStandingUp)
-    {
-        [self.detailText setText:@"Great!"];
-    }
-    else if (self.standUpText)
-    {
-        [self.detailText setText:self.standUpText];
-    }
-    else
-    {
-        [self.detailText setText:@"Get up and move!"];
-    }
+	if (self.isStandingUp)
+	{
+		[self.detailText setText:@"Great!"];
+	}
+	else if (self.standUpText)
+	{
+		[self.detailText setText:self.standUpText];
+	}
+	else
+	{
+		[self.detailText setText:@"Get up and move!"];
+	}
+}
+
+- (void)updateData:(NSTimer *)timer {
+	[self configureGlance];
 }
 
 - (void)didDeactivate {
