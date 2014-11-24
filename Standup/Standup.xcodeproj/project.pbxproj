@@ -18,7 +18,6 @@
 		3B80163F1A226C00004F90C7 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B80163E1A226C00004F90C7 /* InterfaceController.m */; };
 		3B8016421A226C00004F90C7 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8016411A226C00004F90C7 /* NotificationController.m */; };
 		3B8016451A226C00004F90C7 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8016441A226C00004F90C7 /* GlanceController.m */; };
-		3B8016471A226C00004F90C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B8016461A226C00004F90C7 /* Images.xcassets */; };
 		3B80164B1A226C00004F90C7 /* Standup Watch App.app in Resources */ = {isa = PBXBuildFile; fileRef = 3B80164A1A226C00004F90C7 /* Standup Watch App.app */; };
 		3B8016521A226C00004F90C7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B8016511A226C00004F90C7 /* Interface.storyboard */; };
 		3B8016541A226C00004F90C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B8016531A226C00004F90C7 /* Images.xcassets */; };
@@ -32,6 +31,7 @@
 		3B80168C1A228400004F90C7 /* SharedDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B80168A1A228400004F90C7 /* SharedDefaults.m */; };
 		3B80168E1A2299F5004F90C7 /* OriginalPushNotificationPayload.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B80168D1A2299F5004F90C7 /* OriginalPushNotificationPayload.json */; };
 		3B80168F1A229E36004F90C7 /* PushNotificationPayload.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B80163C1A226C00004F90C7 /* PushNotificationPayload.json */; };
+		3B8016901A22A8DC004F90C7 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8016641A226C14004F90C7 /* Shared.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,7 +128,6 @@
 		3B8016411A226C00004F90C7 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
 		3B8016431A226C00004F90C7 /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
 		3B8016441A226C00004F90C7 /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
-		3B8016461A226C00004F90C7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3B80164A1A226C00004F90C7 /* Standup Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Standup Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B8016501A226C00004F90C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B8016511A226C00004F90C7 /* Interface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
@@ -166,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B8016901A22A8DC004F90C7 /* Shared.framework in Frameworks */,
 				3B8016381A226C00004F90C7 /* WatchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,7 +275,6 @@
 				3B8016411A226C00004F90C7 /* NotificationController.m */,
 				3B8016431A226C00004F90C7 /* GlanceController.h */,
 				3B8016441A226C00004F90C7 /* GlanceController.m */,
-				3B8016461A226C00004F90C7 /* Images.xcassets */,
 				3B80163A1A226C00004F90C7 /* Supporting Files */,
 			);
 			path = "Standup WatchKit Extension";
@@ -559,7 +558,6 @@
 			files = (
 				3B80168E1A2299F5004F90C7 /* OriginalPushNotificationPayload.json in Resources */,
 				3B80168F1A229E36004F90C7 /* PushNotificationPayload.json in Resources */,
-				3B8016471A226C00004F90C7 /* Images.xcassets in Resources */,
 				3B80164B1A226C00004F90C7 /* Standup Watch App.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,13 +1,13 @@
 {
     "aps": {
-        "alert": "[ALERT TEXT]",
+        "alert": "Get off your butt!",
         "title": "Optional title",
         "category": "myCategory"
     },
     
     "WatchKit Simulator Actions": [
         {
-            "title": "First Button",
+            "title": "Snooze",
             "identifier": "firstButtonAction"
         }
     ],
