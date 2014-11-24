@@ -12,7 +12,7 @@
 @interface GlanceController()
 
 @property NSString * standUpText;
-@property BOOL  hasStoodUp;
+@property BOOL  isStandingUp;
 
 @property (weak, nonatomic) IBOutlet WKInterfaceTimer *sitTimer;
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *titleLabel;
@@ -44,17 +44,27 @@
     //notification text
 	self.standUpText = [SharedDefaults center].standUpNotification;
 
+    //if the person is standing up, hide the timer
+	self.isStandingUp = [SharedDefaults center].stoodUp;
+
+    // Last time the person stood up and moved
+    self. lastTimeStanding = [SharedDefaults center].lastStandUp;
 
 
-    //if the person stood up...
-	self.hasStoodUp = [SharedDefaults center].stoodUp;
-    if ((!self.lastTimeStanding) || self.hasStoodUp)
+    // TESTTING - remove this:
+    //self.isStandingUp = true;
+    ///////////////////////////////
+
+    [self.sitTimer setHidden:self.isStandingUp];
+    [self.timerLabel setText: !self.isStandingUp ?
+     @"Sitting for:" : @"You're Standing."];
+
+    if ((!self.lastTimeStanding || self.isStandingUp))
     {
         self.lastTimeStanding = [NSDate date];
     }
 
     NSDate* timerStartDate = self.lastTimeStanding;
-//    timerStartDate = [NSDate dateWithTimeInterval:-60 sinceDate:self.lastTimeStanding];
 
     timerStartDate = self.lastTimeStanding;
 
@@ -62,9 +72,17 @@
     [self.sitTimer setDate:timerStartDate];
     [self.sitTimer start];
 
-    if (self.standUpText)
+    if (self.isStandingUp)
+    {
+        [self.detailText setText:@"Great!"];
+    }
+    else if (self.standUpText)
     {
         [self.detailText setText:self.standUpText];
+    }
+    else
+    {
+        [self.detailText setText:@"Get up and move!"];
     }
 }
 

@@ -38,15 +38,16 @@
                     <items>
                         <group alignment="left" id="t8f-Gd-c4y">
                             <items>
-                                <label width="103" height="50" alignment="left" text="Stand Up" textAlignment="right" id="UWp-cJ-MV7">
+                                <imageView width="40" height="36" alignment="left" image="dude" contentMode="scaleAspectFill" id="Tgr-fC-pbY"/>
+                                <label width="76" height="36.5" alignment="left" text="Stand Up" textAlignment="right" id="UWp-cJ-MV7">
                                     <color key="textColor" red="0.14184739639999999" green="1" blue="0.35541378289999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </label>
                             </items>
                         </group>
                         <group alignment="left" layout="vertical" id="uCw-4Q-Ouw">
                             <items>
-                                <label width="1" alignment="left" text="Sitting for:" id="8MJ-Nm-u7Z"/>
-                                <timer width="1" alignment="left" textAlignment="center" id="dUd-FG-u1d">
+                                <label width="1" alignment="left" text="Sitting for:" textAlignment="left" id="8MJ-Nm-u7Z"/>
+                                <timer width="1" alignment="left" textAlignment="center" format="abbreviated" id="dUd-FG-u1d">
                                     <color key="textColor" red="1" green="0.031469800112348789" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                 </timer>
